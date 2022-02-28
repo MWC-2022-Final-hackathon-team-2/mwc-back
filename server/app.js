@@ -7,7 +7,7 @@ const port = process.env.PORT || 5000;
 
 
 app.use(express.json())
-app.use('/api/v1/flight', router)
+app.use('/api/v1/company', router)
 
 app.get('/', (req, res) => {
     res.send('entro')
