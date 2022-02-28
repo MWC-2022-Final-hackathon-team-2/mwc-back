@@ -1,17 +1,15 @@
 const company = require("../models/company");
 
-const companyGet = (req, res) => {
-    res.json({
-        msg: "Estoy aqui",
-    });
+const companyGet = async (req, res) => {
+    const datos = await company.find({})
+    res.json({datos});
 };
 
-const companyPost = (req, res) => {
-    const datos = req.body;
-    console.log(datos);
-    // await company.create()
+const companyPost = async (req, res) => {
+    await company.create(req.body)
     res.json(datos);
 };
+
 module.exports = {
     companyGet,
     companyPost,
