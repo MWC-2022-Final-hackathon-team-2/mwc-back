@@ -14,7 +14,6 @@ app.get('/', (req, res) => {
 });
 
 
-
 const start = async () => {
     try {
         const connect = process.env.DB_URI
