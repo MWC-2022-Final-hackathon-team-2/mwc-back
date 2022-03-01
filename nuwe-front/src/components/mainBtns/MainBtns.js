@@ -94,8 +94,6 @@ const MainBtns = () => {
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
     </nav>

@@ -7,21 +7,12 @@ const Header = () => {
   const navigate = useNavigate();
   return (
     <div>
-          <MainBtns />
-      <nav className="navbar navbar-dark bg-dark">
-        <div className="container-fluid">
-          {/* <img className="navbar-brand" src={barcelona} width="400" alt="" />
-          <div className="d-flex button-group w-auto btnGroup">
-            <button className="btn btn-outline-info "> Add Company +</button>
-            <button className="btn btn-outline-warning ">Add Flight</button>
-          </div> */}
-        </div>
-      </nav>
+      <MainBtns />
       <ul className="nav nav-tabs">
         <li className="nav-item">
           <button
             onClick={() => navigate("/")}
-            className="nav-link active btn btn-outline-info tabBtn"
+            className="nav-link  btn  tabBtn"
             aria-current="page"
           >
             Companies
@@ -30,7 +21,7 @@ const Header = () => {
         <li className="nav-item">
           <button
             onClick={() => navigate("/flights")}
-            className="nav-link btn btn-outline-info tabBtn"
+            className="nav-link btn  tabBtn"
             href="#"
           >
             Flight
@@ -39,7 +30,7 @@ const Header = () => {
         <li className="nav-item">
           <button
             onClick={() => navigate("/statistics")}
-            className="nav-link btn btn-outline-info tabBtn"
+            className="nav-link btn  tabBtn"
             href="#"
           >
             Statistic
