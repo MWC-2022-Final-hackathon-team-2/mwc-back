@@ -55,6 +55,7 @@ export default function FlightFormModal() {
   };
 
   const isValid = () => {
+    console.log("validado")
     return !Object.keys(errors).some((key) => errors[key]);
   };
 

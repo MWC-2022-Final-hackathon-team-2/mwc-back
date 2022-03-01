@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import CompanyService from "../../../services/company.service";
 import { companyValidators } from "../../Validators/Validators";
 
@@ -15,8 +14,6 @@ const CompanyDetails = () => {
   });
 
   const companyService = new CompanyService();
-
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
