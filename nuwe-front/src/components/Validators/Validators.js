@@ -1,5 +1,5 @@
 const companyValidators = {
-  name: (value) => {
+  company: (value) => {
     let message;
     if (!value) {
       message = "Company name is required";
@@ -17,48 +17,48 @@ const companyValidators = {
 };
 
 const flightValidators = {
-  date: (value) => {
-    let message;
-    if (!value) {
-      message = "Date is required";
-    }
-    return message;
-  },
-  originCountry: (value) => {
-    let message;
-    if (!value) {
-      message = "Origin country is required";
-    }
-    return message;
-  },
-  originContinent: (value) => {
-    let message;
-    if (!value) {
-      message = "Origin Continent is required";
-    }
-    return message;
-  },
-  destinationCountry: (value) => {
-    let message;
-    if (!value) {
-      message = "Destination country is required";
-    }
-    return message;
-  },
-  destinationContinent: (value) => {
-    let message;
-    if (!value) {
-      message = "Destination continent is required";
-    }
-    return message;
-  },
-  seats: (value) => {
-    let message;
-    if (!value) {
-      message = "Seats are required";
-    }
-    return message;
-  },
+  // date: (value) => {
+  //   let message;
+  //   if (!value) {
+  //     message = "Date is required";
+  //   }
+  //   return message;
+  // },
+  // originCountry: (value) => {
+  //   let message;
+  //   if (!value) {
+  //     message = "Origin country is required";
+  //   }
+  //   return message;
+  // },
+  // originContinent: (value) => {
+  //   let message;
+  //   if (!value) {
+  //     message = "Origin Continent is required";
+  //   }
+  //   return message;
+  // },
+  // destinationCountry: (value) => {
+  //   let message;
+  //   if (!value) {
+  //     message = "Destination country is required";
+  //   }
+  //   return message;
+  // },
+  // destinationContinent: (value) => {
+  //   let message;
+  //   if (!value) {
+  //     message = "Destination continent is required";
+  //   }
+  //   return message;
+  // },
+  // seats: (value) => {
+  //   let message;
+  //   if (!value) {
+  //     message = "Seats are required";
+  //   }
+  //   return message;
+  // },
 };
 
 export { companyValidators, flightValidators };

@@ -3,7 +3,7 @@ import axios from "axios";
 export default class StatisticService {
   constructor() {
     this.instance = axios.create({
-      baseURL: "http://localhost:5000/api/statistics",
+      baseURL: "http://localhost:2743/api/statistics",
       withCredentials: true,
     });
   }

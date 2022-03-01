@@ -17,12 +17,10 @@ const flightSchema = new mongoose.Schema({
     originContinent: {
         type: String,
         required:true,
-        enum : ["EUROPE","ASIA","OCEANIA","AMERICA","ANTARTIDA","AFRICA"]
     },
     destinationContinent:{
         type:String,
         required:true,
-        enum : ["EUROPE","ASIA","OCEANIA","AMERICA","ANTARTIDA","AFRICA"]
     },
     destinationCountry:{
         type:String,
