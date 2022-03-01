@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import CompanyFormModal from "../../components/CompanyFormModal/CompanyFormModal";
 
 const Home = () => {
   return (
     <div>
-        <h1>Home</h1>
+      <CompanyFormModal />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

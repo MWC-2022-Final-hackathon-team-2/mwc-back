@@ -1,5 +1,5 @@
 const companyValidators = {
-  name: (value) => {
+  company: (value) => {
     let message;
     if (!value) {
       message = "Company name is required";

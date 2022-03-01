@@ -8,12 +8,12 @@ import { companyValidators } from "../../components/Validators/Validators";
 export default function CompanyFormModal() {
 
   const [company, setCompany] = useState({
-    companyName: "",
+    company: "",
     website: "",
   });
 
   const [errors, setErrors] = useState({
-    companyName: null,
+    company: null,
     website: null,
   });
 
@@ -23,10 +23,13 @@ export default function CompanyFormModal() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("one")
     if (isValid()) {
+      console.log("two")
+      console.log(company)
       companyService
         .create(company)
-        .then(() => console.log(company.name, "created"))
+        .then(() => console.log(company.company, "created"))
         .catch((err) => console.log(err));
     }
   };
@@ -61,14 +64,14 @@ export default function CompanyFormModal() {
           {errors.date && <p>{errors.date}</p>}
         </div> */}
         <div>
-          <label htmlFor="companyName">Company: </label>
+          <label htmlFor="company">Company: </label>
           <input
             type="text"
-            name="companyName"
-            value={company.companyName}
+            name="company"
+            value={company.company}
             onChange={handleChange}
           />
-          {errors.companyName && <p>{errors.companyName}</p>}
+          {errors.companyName && <p>{errors.company}</p>}
         </div>
         <div>
           <label htmlFor="website">Website: </label>
