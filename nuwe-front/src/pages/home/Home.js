@@ -1,12 +1,13 @@
-import React from "react";
-import CompanyFormModal from "../../components/CompanyFormModal/CompanyFormModal";
+import React from 'react'
+import JsGrid from '../../components/JsGrid/JsGrid'
 
 const Home = () => {
   return (
     <div>
-      <CompanyFormModal />
+        <JsGrid />
     </div>
-  );
-};
+    
+  )
+}
 
 export default Home;

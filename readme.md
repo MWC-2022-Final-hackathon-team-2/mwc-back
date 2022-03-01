@@ -6,4 +6,3 @@ localhost:5000/api/v1/flight       get all flights and post to create one
 localhost:5000/api/v1/flight/:id   get a  specific flight
 
 
-ss
