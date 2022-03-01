@@ -114,6 +114,7 @@ const FlightDetails = () => {
                     {errors.date && <p>{errors.date}</p>}
                   </div>
                 </div>
+<<<<<<< HEAD
                 <div className="form-outline ">
                   <label className="form-label">Country Origin</label>
                   <input
@@ -163,6 +164,35 @@ const FlightDetails = () => {
                   {errors.destinationContinent && (
                     <p>{errors.destinationContinent}</p>
                   )}
+=======
+                <div className="row">
+                  <div className="form-outline col">
+                    <label className="form-label">Country Origin</label>
+                    <input type="text" id="CountryO" className="form-control" />
+                  </div>
+                  <div className="form-outline col ">
+                    <label className="form-label">Continent Origin</label>
+                    <input
+                      type="text"
+                      id="ContinentO"
+                      className="form-control"
+                    />
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="form-outline col ">
+                    <label className="form-label">Country Destination</label>
+                    <input type="text" id="CountryD" className="form-control" />
+                  </div>
+                  <div className="form-outline col">
+                    <label className="form-label">Continent Destination</label>
+                    <input
+                      type="text"
+                      id="ContinentD"
+                      className="form-control"
+                    />
+                  </div>
+>>>>>>> 227fbd494c25e25f09fc5d137f42ce622f64e9d2
                 </div>
                 <div className="form-outline ">
                   <label className="form-label">Seats</label>
