@@ -1,7 +1,10 @@
 import React from "react";
+import FlightFormModal from "../../components/FlightFormModals/FlightFormModals";
 
 const Flights = () => {
-  return <div>Flight</div>;
+  return (<div>
+    <FlightFormModal />
+  </div>);
 };
 
 export default Flights;

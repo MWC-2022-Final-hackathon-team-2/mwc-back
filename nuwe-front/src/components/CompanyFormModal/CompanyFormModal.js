@@ -23,10 +23,7 @@ export default function CompanyFormModal() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("one")
     if (isValid()) {
-      console.log("two")
-      console.log(company)
       companyService
         .create(company)
         .then(() => console.log(company.company, "created"))
@@ -53,16 +50,6 @@ export default function CompanyFormModal() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        {/* <div>
-          <label htmlFor="date">Date: </label>
-          <input
-            type="date"
-            name="date"
-            value={moment(new Date(company.date)).format("YYYY-MM-DD")}
-            onChange={handleChange}
-          />
-          {errors.date && <p>{errors.date}</p>}
-        </div> */}
         <div>
           <label htmlFor="company">Company: </label>
           <input
