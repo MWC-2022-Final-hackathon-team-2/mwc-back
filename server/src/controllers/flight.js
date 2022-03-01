@@ -79,6 +79,7 @@ const flightDel = async (req, res) => {
     }
 };
 
+
 module.exports = {
     flightGet,
     flightPost,
