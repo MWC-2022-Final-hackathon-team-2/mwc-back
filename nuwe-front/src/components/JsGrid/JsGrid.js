@@ -1,5 +1,6 @@
 import REACT from 'react'
 import $ from 'jquery';
+import swal from 'sweetalert';
 
 async function callDataEmploee() {
     let result = []
@@ -216,10 +217,12 @@ async function callGrid() {
 
 };
 
-export function JsGrid ( ){
+const JsGrid = ( ) => {
     return (
         <div id = 'jsGrid'>
 
         </div>
     )
 }
+
+export default JsGrid;
