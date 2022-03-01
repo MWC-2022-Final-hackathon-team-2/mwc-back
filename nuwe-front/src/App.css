@@ -64,11 +64,10 @@ body {
 .nav {
   border-color: #1ba098;
 }
-li:hover {
-  background-color: #1ba098 !important;
-  border: none;
-  color: white;
+h2 {
+  color: hsla(210, 11%, 15%, 0.6);
 }
+
 .homeBtn:hover,
 .createBtn:hover {
   background-color: #1ba098;
@@ -79,7 +78,13 @@ li:hover {
 .myModal {
   margin-top: 50px;
 }
-
+label {
+  font-size: 30px;
+}
+input[type="text"] {
+  font-size: 30px;
+  color: hsla(210, 11%, 15%, 0.6);
+}
 .close {
   font-size: 20px;
 }
@@ -87,6 +92,13 @@ li:hover {
   border: 8px solid #1ba098;
   background-color: white;
   color: #1ba098;
+  padding: 10px;
+  min-width: 40vw;
+}
+.grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 25% 25% 25% 25%;
 }
 
 .createBtn {
