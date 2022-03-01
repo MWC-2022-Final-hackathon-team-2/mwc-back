@@ -1,13 +1,12 @@
-import React from 'react'
-import JsGrid from '../../components/JsGrid/JsGrid'
+import React from "react";
+import JsGrid from "../../components/JsGrid/JsGrid";
 
 const Home = () => {
   return (
     <div>
-        <JsGrid />
+      <h1>Home</h1>
     </div>
-    
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
