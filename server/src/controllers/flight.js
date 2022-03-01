@@ -10,6 +10,18 @@ const flightGet = async (req, res) => {
     }
 };
 
+const flightGetId = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const datos = await flight.findOne({ id: id });
+        res.json({ datos });
+
+    } catch (error) {
+        res.json({ error: "error" });
+    }
+};
+
 const flightPost = async (req, res) => {
     try {
         const numBseats = req.body.seats;
@@ -81,6 +93,7 @@ const flightDel = async (req, res) => {
 
 module.exports = {
     flightGet,
+    flightGetId,
     flightPost,
     flightPatch,
     flightDel,
