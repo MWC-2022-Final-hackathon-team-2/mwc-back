@@ -1,9 +1,15 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import ExampleCreateCompany from "./pages/ExampleCreateCompany/ExampleCreateCompany";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
     <div>
-      <h1>Hello Nuwe </h1>
+    <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/create-company" element={<ExampleCreateCompany />} />
+      </Routes>
     </div>
   );
 }
