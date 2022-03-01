@@ -51,21 +51,33 @@ const FlightDetails = () => {
                     <input type="date" id="date" className="form-control" />
                   </div>
                 </div>
-                <div className="form-outline ">
-                  <label className="form-label">Country Origin</label>
-                  <input type="text" id="CountryO" className="form-control" />
+                <div className="row">
+                  <div className="form-outline col">
+                    <label className="form-label">Country Origin</label>
+                    <input type="text" id="CountryO" className="form-control" />
+                  </div>
+                  <div className="form-outline col ">
+                    <label className="form-label">Continent Origin</label>
+                    <input
+                      type="text"
+                      id="ContinentO"
+                      className="form-control"
+                    />
+                  </div>
                 </div>
-                <div className="form-outline ">
-                  <label className="form-label">Continent Origin</label>
-                  <input type="text" id="ContinentO" className="form-control" />
-                </div>
-                <div className="form-outline ">
-                  <label className="form-label">Country Destination</label>
-                  <input type="text" id="CountryD" className="form-control" />
-                </div>
-                <div className="form-outline ">
-                  <label className="form-label">Continent Destination</label>
-                  <input type="text" id="ContinentD" className="form-control" />
+                <div className="row">
+                  <div className="form-outline col ">
+                    <label className="form-label">Country Destination</label>
+                    <input type="text" id="CountryD" className="form-control" />
+                  </div>
+                  <div className="form-outline col">
+                    <label className="form-label">Continent Destination</label>
+                    <input
+                      type="text"
+                      id="ContinentD"
+                      className="form-control"
+                    />
+                  </div>
                 </div>
                 <div className="form-outline ">
                   <label className="form-label">Seats</label>
