@@ -5,7 +5,7 @@ import Home from "./pages/home/Home";
 import Statistics from "./pages/statistics/Statistics";
 import Flights from "./pages/flights/Flights";
 
-function App() {
+export function App() {
   return (
     <div>
       <Header />
