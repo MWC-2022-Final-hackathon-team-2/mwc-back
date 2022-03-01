@@ -5,7 +5,7 @@ require('dotenv').config();
 const router = require('./src/routes/company');
 const app = express();
 require('./src/middlewares/cors')(app);
-const port =  2743;
+const port = 2743;
 
 app.use(express.json())
 app.use('/api/v1', router)
