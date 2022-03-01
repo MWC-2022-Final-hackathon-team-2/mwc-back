@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 
-
 const flightSchema = new mongoose.Schema({
     company: {
         type: String,
@@ -29,9 +28,9 @@ const flightSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    Seats:{
+    seats:{
         type:Number,
-        max:3
+        max:230
     }
 })
 
