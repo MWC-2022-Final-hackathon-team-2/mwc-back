@@ -21,38 +21,59 @@ body {
 }
 .btnGroup {
   padding-right: 20px;
+  padding-top: 20px;
 }
 .homeBtn {
-  border: 4px solid #1ba098;
-  font-size: x-large;
-  min-height: 70px;
-  transition: all 0.1s ease-in-out;
-  color: #1ba098;
-  margin: 0 40px;
-  border-radius: 5px;
-  background-color: #212529;
-  letter-spacing: 2px;
-}
-.tabBtn {
   border: 4px solid #1ba098;
   font-size: x-large;
   min-height: 50px;
   transition: all 0.1s ease-in-out;
   color: #1ba098;
-  margin: 20px 40px;
+  margin: 0 10px;
   border-radius: 5px;
   background-color: #212529;
   letter-spacing: 2px;
 }
-.tabBtn:active {
-  background-color: #1ba098;
+.tabBtn {
+  font-size: x-large;
+  min-height: 50px;
+  transition: all 0.1s ease-in-out;
+  color: #1ba098;
+  margin: 20px 40px;
+  border: none;
+  background-color: #212529;
+  letter-spacing: 2px;
 }
+.tabBtn:active,
+.tabBtn:hover {
+  background-color: #1ba098 !important;
 
+  color: white;
+  border: none;
+}
+.nav-link {
+  color: #1ba098 !important;
+}
+.nav-link:hover {
+  color: white !important;
+}
+.nav-link:active {
+  background-color: #1ba098 !important;
+  border: 1px solid #1ba098;
+}
+.nav {
+  border-color: #1ba098;
+}
+li:hover {
+  background-color: #1ba098 !important;
+  border: none;
+  color: white;
+}
 .homeBtn:hover,
 .createBtn:hover {
   background-color: #1ba098;
   box-shadow: 0 0 12px 0 #1ba098;
-  color: white !important;
+
   transform: scale(1.01);
 }
 .myModal {
