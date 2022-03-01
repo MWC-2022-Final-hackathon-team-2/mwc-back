@@ -3,7 +3,7 @@ import axios from "axios";
 export default class FlightService {
   constructor() {
     this.instance = axios.create({
-      baseURL: "http://localhost:5000/api/v1/flight",
+      baseURL: "http://localhost:2743/api/v1/flight",
       withCredentials: true,
     });
   }

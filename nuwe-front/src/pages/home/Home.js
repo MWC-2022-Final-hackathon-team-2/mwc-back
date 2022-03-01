@@ -1,9 +1,10 @@
 import React from 'react'
+import AgGrid from '../../components/ag-Grid/Ag-Grid';
 
 const Home = () => {
   return (
     <div>
-        <h1>Home</h1>
+        <AgGrid/>
     </div>
   )
 }

@@ -77,12 +77,12 @@ function AgGrid() {
   }
 
   const peticionPut=async()=>{
-    await axios.post(baseUrl+"/"+companySeleccionado._id, companySeleccionado)
+     
+    await axios.patch(baseUrl+"/"+companySeleccionado._id, companySeleccionado)
     .then(response=>{
-      var dataNueva= data.datos;
-      console.log(dataNueva);
+      var dataNueva= data;
       dataNueva.map(company=>{
-        if (company.id === companySeleccionado.id) {
+        if (company._id === companySeleccionado._id) {
           company.company = companySeleccionado.company;
           company.website = companySeleccionado.website;
           company.totalFlights = companySeleccionado.totalFlights;
@@ -97,9 +97,9 @@ function AgGrid() {
   }
 
   const peticionDelete=async()=>{
-    await axios.delete(baseUrl + "/" + companySeleccionado.id)
+    await axios.delete(baseUrl + "/" + companySeleccionado._id)
     .then(response=>{
-      setData(data.filter(company => company.id !== companySeleccionado.id));
+      setData(data.filter(company => company._id !== companySeleccionado._id));
       abrirCerrarModalEliminar();
     }).catch(error=>{
       console.log(error);
@@ -184,7 +184,7 @@ function AgGrid() {
      <MaterialTable
           columns={columns}
           data={data}
-          title="Artistas Musicales con Mayores Ventas"  
+          title="Flight Companys"  
           actions={[
             {
               icon: 'edit',
