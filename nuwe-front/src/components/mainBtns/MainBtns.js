@@ -1,10 +1,12 @@
 import React from "react";
+import barcelona from "../../assets/barcelona.png";
 
 const MainBtns = () => {
   return (
-    <div className="main">
-      <div className="row">
-        <div className="col-sm-6 ">
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <img class="navbar-brand" src={barcelona} width="400" alt="" />
+        <div class="d-flex button-group w-auto btnGroup">
           <button
             className="btn  btn-lg homeBtn"
             data-bs-toggle="modal"
@@ -48,8 +50,7 @@ const MainBtns = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className=" col-sm-6">
+
           <button
             className="btn  btn-lg homeBtn"
             data-bs-toggle="modal"
@@ -93,9 +94,12 @@ const MainBtns = () => {
               </div>
             </div>
           </div>
+
+          {/* <button class="btn btn-outline-info "> Add Company +</button>
+      <button class="btn btn-outline-warning ">Add Flight</button> */}
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
