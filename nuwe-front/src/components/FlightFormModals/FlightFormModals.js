@@ -33,8 +33,15 @@ export default function FlightFormModal() {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
+    console.log(flight);
+    console.log(errors)
+    console.log("one")
     e.preventDefault();
+    console.log("two")
+
     if (isValid()) {
+      console.log("tree")
+
       flightService
         .create(flight)
         .then(() => console.log(flight.company, "created"))
@@ -55,6 +62,7 @@ export default function FlightFormModal() {
   };
 
   const isValid = () => {
+    console.log("validado")
     return !Object.keys(errors).some((key) => errors[key]);
   };
 
