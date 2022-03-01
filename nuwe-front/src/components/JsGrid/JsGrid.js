@@ -8,7 +8,7 @@ async function callDataEmploee() {
         var dataEmployee = []
         result = await $.ajax({
             type: "GET",
-            url: "http://localhost:5000/api/v1/flight",
+            url: "http://localhost:2743/api/v1/company",
             success: function (data) {
                 console.log(data.datos)
                 dataEmployee = data.datos;

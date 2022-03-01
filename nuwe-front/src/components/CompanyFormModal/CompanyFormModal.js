@@ -1,41 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 // import moment from "moment";
 import { useNavigate } from "react-router-dom";
+import CompanyService from "../../services/company.service";
+import { companyValidators } from "../../components/Validators/Validators";
 
-export default function CompanyFormModal(props) {
-  const { fields, isValid, errors, handleChange, handleSubmit } = props;
+
+export default function CompanyFormModal() {
+
+  const [company, setCompany] = useState({
+    company: "",
+    website: "",
+  });
+
+  const [errors, setErrors] = useState({
+    company: null,
+    website: null,
+  });
+
+  const companyService = new CompanyService();
 
   const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isValid()) {
+      companyService
+        .create(company)
+        .then(() => console.log(company.company, "created"))
+        .catch((err) => console.log(err));
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCompany({
+      ...company,
+      [name]: value,
+    });
+    setErrors({
+      ...errors,
+      [name]: companyValidators[name](value),
+    });
+  };
+
+  const isValid = () => {
+    return !Object.keys(errors).some((key) => errors[key]);
+  };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        {/* <div>
-          <label htmlFor="date">Date: </label>
-          <input
-            type="date"
-            name="date"
-            value={moment(new Date(fields.date)).format("YYYY-MM-DD")}
-            onChange={handleChange}
-          />
-          {errors.date && <p>{errors.date}</p>}
-        </div> */}
         <div>
-          <label htmlFor="companyName">Company: </label>
+          <label htmlFor="company">Company: </label>
           <input
             type="text"
-            name="companyName"
-            value={fields.companyName}
+            name="company"
+            value={company.company}
             onChange={handleChange}
           />
-          {errors.companyName && <p>{errors.companyName}</p>}
+          {errors.companyName && <p>{errors.company}</p>}
         </div>
         <div>
           <label htmlFor="website">Website: </label>
           <input
             type="text"
             name="website"
-            value={fields.website}
+            value={company.website}
             onChange={handleChange}
           />
           {errors.website && (
