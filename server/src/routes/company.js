@@ -4,8 +4,8 @@ const { companyGet, companyPost, companyPatch, companyDel, companyGetId } = requ
 const { flightGet, flightPost, flightDel, flightPatch } = require('../controllers/flight');
 
 //company
-router.route('/').get(companyGet).post(companyPost);
-router.route('/:id').patch(companyPatch).delete(companyDel).get(companyGetId)
+router.route('/company').get(companyGet).post(companyPost);
+router.route('/company/:id').patch(companyPatch).delete(companyDel).get(companyGetId)
 
 
 // Flights

@@ -24,8 +24,9 @@ const companyGetId = async (req, res) => {
     try {
         const datos = await company.findOne({ id: id });
         res.json({ datos });
+        
     } catch (error) {
-        res.json({ error: error });
+        res.json({ error:"error" });
     }
 };
 const companyPatch = async (req, res) => {
