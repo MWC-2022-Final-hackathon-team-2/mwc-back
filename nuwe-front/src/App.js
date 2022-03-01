@@ -1,9 +1,13 @@
 import "./App.css";
+import {Switch, Route} from 'react-router-dom';
+import {JsGrid} from './components/JsGrid/JsGrid.js'
 
-function App() {
+export function App() {
   return (
     <div>
-      <h1>Hello Nuwe </h1>
+        <Route path="/">
+          <JsGrid />
+        </Route>
     </div>
   );
 }

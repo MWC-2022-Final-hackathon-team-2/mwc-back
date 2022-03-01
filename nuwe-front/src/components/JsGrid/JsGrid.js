@@ -218,7 +218,7 @@ async function callGrid() {
 
 export function JsGrid ( ){
     return (
-        < div id = 'jsGrid' >
+        <div id = 'jsGrid'>
 
         </div>
     )
