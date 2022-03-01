@@ -1,22 +1,27 @@
-import REACT from 'react'
 import $ from 'jquery';
+import REACT from 'react'
 import swal from 'sweetalert';
 
 async function callDataEmploee() {
     let result = []
     try {
+        var dataEmployee = []
         result = await $.ajax({
-            type: "POST",
-            url: `${data}/getdb`,
+            type: "GET",
+            url: "http://localhost:5000/api/v1/flight",
             success: function (data) {
-                dataEmployee = JSON.parse(data);
+                console.log(data.datos)
+                dataEmployee = data.datos;
+                // console.log("pepe")
             }
         })
-        return JSON.parse(result);
+        console.log(result.datos)
+        return result.datos;
     } catch (error) {
         console.error("Don't load the Data");
     }
 };
+
 
 
 
@@ -115,9 +120,9 @@ async function callGrid() {
 
                 //todo header button and function
                 headerTemplate: () => {
-                    return $("<button>").attr("type", "button").attr('class', "fas fa-user-plus")
+                    return $("<button>").attr("type", "button").attr('className', "fas fa-user-plus")
                         .on("click", function () {
-                            window.location.assign(`${registerView}`)
+                            // window.location.assign(`${registerView}`)
                         });
                 }
             },
@@ -126,7 +131,7 @@ async function callGrid() {
         onItemUpdated: function (args) {
             $.ajax({
                 type: "POST",
-                url: `${registerView}/data/${args.item[0]}`,
+                // url: `${registerView}/data/${args.item[0]}`,
                 data: args.item,
                 success: function (data) {
                     swal({
@@ -152,7 +157,7 @@ async function callGrid() {
                         });
                         $.ajax({
                             type: "DELETE",
-                            url: `${data}/Delete/${args.item[0]}`,
+                            // url: `${data}/Delete/${args.item[0]}`,
                             success: function (data) {
                                 swal({
                                     title: "Employee Deleted",
@@ -172,56 +177,59 @@ async function callGrid() {
         rowClick: function (args) {},
         //todo event listener to redirect to employee.php with id and charge all data in the form
         rowDoubleClick: function (args) {
-            $idget = args["item"].id
-            window.location.assign(`${registerView}/checked/${$idget}`)
+            // $idget = args["item"].id
+            // window.location.assign(`${registerView}/checked/${$idget}`)
         },
         onItemInserting: function (args) {
-            emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-            if (!emailRegex.test(args.item.email)) {
-                args.cancel = true;
-                swal({
-                    title: "Email incorrect",
-                    icon: "warning",
-                });
-            }
+            // emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+            // if (!emailRegex.test(args.item.email)) {
+                // args.cancel = true;
+                // swal({
+                    // title: "Email incorrect",
+                    // icon: "warning",
+                // });
+            // }
 
-            dataEmployee.forEach(element => {
-                if (element.email == args.item.email) {
-                    args.cancel = true;
-                    swal({
-                        title: "Email already in the database",
-                        icon: "warning",
-                    });
-                }
-            });
+            // dataEmployee.forEach(element => {
+            //     if (element.email == args.item.email) {
+            //         args.cancel = true;
+            //         swal({
+            //             title: "Email already in the database",
+            //             icon: "warning",
+            //         });
+            //     }
+            // });
         },
 
         //todo event listener to after validations insert the employee in employee.json
-        onItemInserted: function (args) {
-            route = window.location.href
-            $.ajax({
-                type: "POST",
-                url: `${route}/nep`,
-                data: args.item,
-                success: function (data) {
-                    swal({
-                        title: "Employee Added",
-                        icon: "success",
-                    });
-                    callGrid();
-                    // console.log(data)
-                }
-            })
-        }
+    //     onItemInserted: function (args) {
+    //         route = window.location.href
+    //         $.ajax({
+    //             type: "POST",
+    //             url: `${route}/nep`,
+    //             data: args.item,
+    //             success: function (data) {
+    //                 swal({
+    //                     title: "Employee Added",
+    //                     icon: "success",
+    //                 });
+    //                 callGrid();
+    //                 // console.log(data)
+    //             }
+    //         })
+    //     }
     });
 
 };
 
-const JsGrid = ( ) => {
+callGrid()
+
+const JsGrid = () => {
     return (
-        <div id = 'jsGrid'>
+        <div id='jsGrid'>
 
         </div>
+        
     )
 }
 

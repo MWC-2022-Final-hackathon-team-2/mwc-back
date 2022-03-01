@@ -7,39 +7,39 @@ const Header = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
           <MainBtns />
-          {/* <img class="navbar-brand" src={barcelona} width="400" alt="" />
-          <div class="d-flex button-group w-auto btnGroup">
-            <button class="btn btn-outline-info "> Add Company +</button>
-            <button class="btn btn-outline-warning ">Add Flight</button>
+      <nav className="navbar navbar-dark bg-dark">
+        <div className="container-fluid">
+          {/* <img className="navbar-brand" src={barcelona} width="400" alt="" />
+          <div className="d-flex button-group w-auto btnGroup">
+            <button className="btn btn-outline-info "> Add Company +</button>
+            <button className="btn btn-outline-warning ">Add Flight</button>
           </div> */}
         </div>
       </nav>
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
+      <ul className="nav nav-tabs">
+        <li className="nav-item">
           <button
             onClick={() => navigate("/")}
-            class="nav-link active btn btn-outline-info tabBtn"
+            className="nav-link active btn btn-outline-info tabBtn"
             aria-current="page"
           >
             Companies
           </button>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
           <button
             onClick={() => navigate("/flights")}
-            class="nav-link btn btn-outline-info tabBtn"
+            className="nav-link btn btn-outline-info tabBtn"
             href="#"
           >
             Flight
           </button>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
           <button
             onClick={() => navigate("/statistics")}
-            class="nav-link btn btn-outline-info tabBtn"
+            className="nav-link btn btn-outline-info tabBtn"
             href="#"
           >
             Statistic

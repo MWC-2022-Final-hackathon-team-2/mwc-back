@@ -1,8 +1,10 @@
+const corst = require("cors")
 const express = require('express');
 const { dbConection } = require('./src/db/config');
 require('dotenv').config();
 const router = require('./src/routes/company');
 const app = express();
+app.use(corst())
 const port = process.env.PORT || 5000;
 
 
