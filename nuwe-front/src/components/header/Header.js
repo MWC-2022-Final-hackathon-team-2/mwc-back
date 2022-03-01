@@ -1,6 +1,7 @@
 import React from "react";
 import barcelona from "../../assets/barcelona.png";
 import { useNavigate } from "react-router-dom";
+import MainBtns from "../mainBtns/MainBtns";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -8,11 +9,12 @@ const Header = () => {
     <div>
       <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-          <img class="navbar-brand" src={barcelona} width="400" alt="" />
+          <MainBtns />
+          {/* <img class="navbar-brand" src={barcelona} width="400" alt="" />
           <div class="d-flex button-group w-auto btnGroup">
             <button class="btn btn-outline-info "> Add Company +</button>
             <button class="btn btn-outline-warning ">Add Flight</button>
-          </div>
+          </div> */}
         </div>
       </nav>
       <ul class="nav nav-tabs">
