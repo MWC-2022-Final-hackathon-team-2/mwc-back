@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 
-const flightSchema = new mongoose.Schema({
+const companySchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -21,4 +21,4 @@ const flightSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('company', flightSchema)
+module.exports = mongoose.model('company', companySchema)
