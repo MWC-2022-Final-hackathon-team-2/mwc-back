@@ -1,10 +1,12 @@
 import React from 'react'
+import JsGrid from '../../components/JsGrid/JsGrid'
 
 const Home = () => {
   return (
     <div>
-        <h1>Home</h1>
+        <JsGrid />
     </div>
+    
   )
 }
 

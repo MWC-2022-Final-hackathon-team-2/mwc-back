@@ -14,7 +14,7 @@ const flightGetId = async (req, res) => {
     const { id } = req.params;
 
     try {
-        const datos = await flight.findOne({ id: id });
+        const datos = await flight.findOne({ _id: id });
         res.json({ datos });
 
     } catch (error) {

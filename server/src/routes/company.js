@@ -5,7 +5,7 @@ const { flightGet, flightGetId, flightPost, flightDel, flightPatch } = require('
 
 //company
 router.route('/company').get(companyGet).post(companyPost);
-router.route('/company/:id').patch(companyPatch).delete(companyDel).get(companyGetId)
+router.route('/company/:id').patch(companyPatch).delete(companyDel).get(companyGetId);
 
 
 // Flights

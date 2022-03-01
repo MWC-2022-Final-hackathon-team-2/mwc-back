@@ -22,7 +22,7 @@ const companyGetId = async (req, res) => {
     const { id } = req.params;
 
     try {
-        const datos = await company.findOne({ id: id });
+        const datos = await company.findOne({ _id: id });
         res.json({ datos });
         
     } catch (error) {
