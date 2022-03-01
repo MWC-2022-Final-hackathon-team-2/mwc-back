@@ -1,6 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import CompanyService from "../../../services/company.service";
+import { companyValidators } from "../../Validators/Validators";
 
 const CompanyDetails = () => {
+  const [company, setCompany] = useState({
+    company: "",
+    website: "",
+  });
+
+  const [errors, setErrors] = useState({
+    company: null,
+    website: null,
+  });
+
+  const companyService = new CompanyService();
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isValid()) {
+      companyService
+        .create(company)
+        .then(() => console.log(company.company, "created"))
+        .catch((err) => console.log(err));
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setCompany({
+      ...company,
+      [name]: value,
+    });
+    setErrors({
+      ...errors,
+      [name]: companyValidators[name](value),
+    });
+  };
+
+  const isValid = () => {
+    return !Object.keys(errors).some((key) => errors[key]);
+  };
+
   return (
     <div>
       <button
@@ -31,15 +74,29 @@ const CompanyDetails = () => {
               ></button>
             </div>
             <div className="modal-body ">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="form-outline ">
                   <label className="name">Company Name</label>
-                  <input type="text" id="name" className="form-control" />
+                  <input
+                    type="text"
+                    name="company"
+                    value={company.company}
+                    onChange={handleChange}
+                    className="form-control"
+                  />
+                  {errors.companyName && <p>{errors.company}</p>}
                 </div>
 
                 <div className="form-outline ">
                   <label className="form-label">Website</label>
-                  <input type="text" id="web" className="form-control" />
+                  <input
+                    type="text"
+                    name="website"
+                    value={company.website}
+                    onChange={handleChange}
+                    className="form-control"
+                  />
+                  {errors.website && <p>{errors.website}</p>}
                 </div>
 
                 <div className="modal-footer mt-4">
@@ -50,7 +107,11 @@ const CompanyDetails = () => {
                   >
                     Close
                   </button>
-                  <button type="button" className="btn createBtn">
+                  <button
+                    disabled={!isValid()}
+                    type="submit"
+                    className="btn createBtn"
+                  >
                     Save Changes
                   </button>
                 </div>
